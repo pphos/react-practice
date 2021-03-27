@@ -1,6 +1,16 @@
 import React, { useState } from 'react';
 
 const BULK_UNIT = 10;
+const BEADS_COLORS = [
+  'gray',
+  'red',
+  'yellow',
+  'green',
+  'blue',
+  'indigo',
+  'purple',
+  'pink'
+];
 
 const App: React.FC = () => {
   const [count, setCount] = useState(0);
@@ -39,6 +49,13 @@ const App: React.FC = () => {
                 className="col-start-1 col-end-3 text-white bg-gray-500 rounded text-lg focus:outline-none hover:bg-gray-700 my-3 p-2"
                 onClick={() =>add(BULK_UNIT)}>+{BULK_UNIT}</button>
             </div>
+          </div>
+          <div className="grid grid-cols-10 justify-items-center mt-5">
+            {
+              BEADS_COLORS.map((color, index) => {
+                return <div className={`rounded-full h-8 w-8 bg-${color}-500`} key={index}></div>
+              })
+            }
           </div>
         </div>
       </div>
