@@ -2,7 +2,7 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { add, decrement, increment } from '../actions';
-import { CounterState } from '../reducer';
+import { CounterState } from '../features/counter';
 import CounterBoard from '../components/CounterBoard';
 
 const EnhancedCounterBoard: React.FC = () => {
