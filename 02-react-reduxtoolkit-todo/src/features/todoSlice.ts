@@ -17,9 +17,12 @@ export const todoSlice = createSlice({
   ],
   reducers: {
     created: (state: Todo[], action: PayloadAction<Todo>) => {
-      state.push(action.payload)
+      const id = state.length;
+      state.push({...action.payload, id});
     }
   }
 });
+
+export const { created } = todoSlice.actions;
 
 export default todoSlice.reducer;
