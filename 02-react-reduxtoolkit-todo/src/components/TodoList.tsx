@@ -9,6 +9,7 @@ import TableRow from '@material-ui/core/TableRow';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
 
+import TodoItem from './TodoItem';
 import { Store } from '../store';
 import { Todo } from '../features/todoSlice';
 
@@ -20,6 +21,7 @@ const TodoList: React.FC = () => {
       <Table style={{ minWidth: 650 }}>
         <TableHead>
           <TableRow>
+            <TableCell />
             <TableCell>No.</TableCell>
             <TableCell>ステータス</TableCell>
             <TableCell>タスク名</TableCell>
@@ -27,13 +29,7 @@ const TodoList: React.FC = () => {
         </TableHead>
         <TableBody>
           {todos.map((todo, index) => {
-            return (
-              <TableRow key={index}>
-                <TableCell align="left">{todo.id}</TableCell>
-                <TableCell align="left">{todo.status}</TableCell>
-                <TableCell align="left">{todo.title}</TableCell>
-              </TableRow>
-            );
+            return <TodoItem todo={todo} key={index} />;
           })}
         </TableBody>
       </Table>
