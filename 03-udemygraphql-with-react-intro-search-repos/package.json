@@ -5,6 +5,7 @@
   "dependencies": {
     "@apollo/client": "^3.3.16",
     "@craco/craco": "^6.1.2",
+    "@graphql-codegen/typescript": "^1.22.0",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
@@ -23,7 +24,8 @@
     "start": "craco start",
     "build": "craco build",
     "test": "craco test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "generate": "graphql-codegen --config codegen.yml -r dotenv/config"
   },
   "eslintConfig": {
     "extends": [
@@ -48,8 +50,13 @@
     ]
   },
   "devDependencies": {
+    "@graphql-codegen/cli": "1.21.4",
     "autoprefixer": "^9",
     "postcss": "^7",
-    "tailwindcss": "npm:@tailwindcss/postcss7-compat"
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat",
+    "@graphql-codegen/typescript-react-apollo": "2.2.4",
+    "@graphql-codegen/typescript-operations": "1.17.16",
+    "@graphql-codegen/typescript": "1.22.0",
+    "@graphql-codegen/introspection": "1.18.2"
   }
 }
