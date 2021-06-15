@@ -1,9 +1,9 @@
 import React from 'react';
 
 type Props = {
-  value: string,
-  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void
-}
+  value: string;
+  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+};
 
 const SearchForm: React.FC<Props> = ({ value, onChange }) => {
   return (
